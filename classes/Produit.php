@@ -1,10 +1,10 @@
 <?php
 
 abstract class Produit{
-    protected $nom;
-    protected $prixHT;
+    protected string $nom;
+    protected float $prixHT;
 
-    public function __construct($nom, $prixHT)
+    public function __construct(string $nom, float $prixHT)
     {
         $this->nom = $nom;
         $this->prixHT = $prixHT;
