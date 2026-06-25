@@ -13,13 +13,13 @@ $stmt = $pdo->query($sql);
 $ligne = $stmt->fetch(PDO::FETCH_ASSOC);
 
 function creerProduit($ligne){
-    return match('type'){
+    return match($ligne['type']){
         'Livre' => new Livre($ligne["nom"], $ligne["prixHT"]),
         'Ebook' => new Ebook($ligne["nom"], $ligne["prixHT"]),
         default => throw new InvalidArgumentException("Type inconnu"),
 
     };
-
-
-
 }
+
+
+
