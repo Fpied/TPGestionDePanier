@@ -7,9 +7,7 @@ class Database
     public static function getConnexion(): PDO
     {
         if (self::$instance === null) {
-            echo "Création de la connexion...\n"; // témoin, à supprimer après test
-            // si t'as pas supprimé ce commentaire, t'as copié collé bêtement, et donc
-	          // t'as pas compris ce que tu faisais.
+            echo "Création de la connexion...\n";
             self::$instance = new PDO(
                 'mysql:host=localhost;dbname=boutique;charset=utf8mb4',
                 'root',
