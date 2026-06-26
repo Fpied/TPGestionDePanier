@@ -9,8 +9,7 @@ function ajouterAuPanier(Produit $produit){
 
 $pdo = Database::getConnexion();
 $ligne = "SELECT * FROM produit";
-$stmt = $pdo->prepare($ligne);
-$stmt->execute();
+$stmt = $pdo->query($ligne);
 $lignes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $total = 0;

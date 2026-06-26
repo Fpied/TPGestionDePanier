@@ -11,11 +11,7 @@ class Ebook extends Produit{
         return $prixTTC;
     }
 
-    #[Override]
-    function getFraisDePort()
-    {
-        return parent::getFraisDePort();
-    }
+    
 
 
 
