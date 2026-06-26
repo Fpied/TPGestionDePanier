@@ -8,7 +8,7 @@ class Ebook extends Produit{
     function calculerPrixTTC()
     {
         $prixTTC = $this->prixHT * 1.20;
-        return $prixTTC;
+        return round($prixTTC, 2);
     }
 
     #[Override]
