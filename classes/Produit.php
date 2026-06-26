@@ -14,7 +14,7 @@ abstract class Produit{
         return $this->nom;
     }
 
-    abstract function calculerPrixTTC();
+    abstract public function calculerPrixTTC();
 
     public function getFraisDePort(){
         return 0;

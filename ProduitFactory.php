@@ -1,25 +1,26 @@
 <?php
 
-require_once "db.php";
+require_once "classes/Livre.php";
+require_once "classes/Ebook.php";
 
-$pdo = Database::getConnexion();
 
-$sql = "SELECT * FROM produit";
-$stmt = $pdo->query($sql);
 
-// While ($row =$stmt->fetch(PDO::FETCH_ASSOC)){
-//     echo $row['nom'] . " - " . $row['prix_ht'] . "<br>";
-// }
-$ligne = $stmt->fetch(PDO::FETCH_ASSOC);
+class ProduitFactory{
 
-function creerProduit($ligne){
-    return match($ligne['type']){
-        'Livre' => new Livre($ligne["nom"], $ligne["prixHT"]),
-        'Ebook' => new Ebook($ligne["nom"], $ligne["prixHT"]),
-        default => throw new InvalidArgumentException("Type inconnu"),
+    public static function creerProduit(array $ligne){
 
-    };
+
+        return match($ligne['type']){
+            'livre' => new Livre($ligne["nom"], (float) $ligne["prix_ht"]),
+            'ebook' => new Ebook($ligne["nom"], (float) $ligne["prix_ht"]),
+            default => throw new InvalidArgumentException("Type inconnu"),
+
+        };
+    }
+
 }
+
+
 
 
 
