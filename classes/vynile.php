@@ -2,7 +2,7 @@
 
 require_once "Produit.php";
 
-class Ebook extends Produit{
+class Vynile extends Produit{
 
     #[Override]
     function calculerPrixTTC()
@@ -12,12 +12,16 @@ class Ebook extends Produit{
     }
 
     #[Override]
-    function getType()
+    function getFraisDePort()
     {
-        return "ebook";
+        return 4;
     }
 
-    
+    #[Override]
+    function getType()
+    {
+        return "vynile";
+    }
 
 
 

@@ -20,6 +20,8 @@ abstract class Produit{
         return 0;
     }
 
+    abstract public function getType();
+
 
 
 
