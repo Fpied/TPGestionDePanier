@@ -1,6 +1,8 @@
 <?php
 
+// je déclare une class abstract une classe spécdiale pour être utilisée comme base pour les classes , livres , Ebook vynile etc... 
 abstract class Produit{
+
     protected string $nom;
     protected float $prixHT;
 
@@ -14,8 +16,10 @@ abstract class Produit{
         return $this->nom;
     }
 
+    // utilisation d'une function utile dans les autres class comme getType; 
     abstract public function calculerPrixTTC();
 
+    // Les frais de port sont défini à zéro pour tout les produits
     public function getFraisDePort(){
         return 0;
     }
